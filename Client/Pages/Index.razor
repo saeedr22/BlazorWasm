@@ -1,0 +1,25 @@
+﻿@page "/"
+<button @onclick="@(()=>Console.WriteLine("Test"))">Click 1</button>
+<button @onclick="@WriteLog">Click 2</button>
+<button @onclick="@(()=>WriteLogWithParam("Test 3"))">Click 3</button>
+<p>Hello, @StringUtils.MyCustomToUpper("SaRez")</p>
+
+
+@code {
+    void WriteLog()
+    {
+        Console.WriteLine("Test Log");
+    }
+
+    void WriteLogWithParam(string value)
+    {
+        Console.WriteLine(value);
+    }
+
+    public class StringUtils
+    {
+        public static string MyCustomToUpper(string value) => value.ToUpper();
+    }
+}
+
+

@@ -1,0 +1,12 @@
+E:\sarez\BlazorWasm\Shared\bin\Debug\net6.0\BlazorWasm.Shared.deps.json
+E:\sarez\BlazorWasm\Shared\bin\Debug\net6.0\BlazorWasm.Shared.dll
+E:\sarez\BlazorWasm\Shared\bin\Debug\net6.0\BlazorWasm.Shared.pdb
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.csproj.AssemblyReference.cache
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.AssemblyInfoInputs.cache
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.AssemblyInfo.cs
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.csproj.CoreCompileInputs.cache
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.dll
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\refint\BlazorWasm.Shared.dll
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\BlazorWasm.Shared.pdb
+E:\sarez\BlazorWasm\Shared\obj\Debug\net6.0\ref\BlazorWasm.Shared.dll
