@@ -1,11 +1,76 @@
 ﻿@page "/"
+@using BlazorWasm.Shared
+@using BlazorWasm.Shared.Models
+@inject HttpClient Http
+
 <button @onclick="@(()=>Console.WriteLine("Test"))">Click 1</button>
 <button @onclick="@WriteLog">Click 2</button>
 <button @onclick="@(()=>WriteLogWithParam("Test 3"))">Click 3</button>
 <p>Hello, @StringUtils.MyCustomToUpper("SaRez")</p>
+<p>@name</p>
+<p>@CustomToUpper(name)</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>کد</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Persons)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@((MarkupString)item.Family)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 
 
 @code {
+    string name = "Saeed";
+    string CustomToUpper(string s) => s.ToUpper();
+    List<Person>
+    Persons = new List<Person>
+                            {
+            new Person{Id=1,Name="Reza",Family="Ahmadi"},
+            new Person{Id=2,Name="Saeed",Family="<b>Rezaei</b>"},
+            new Person{Id=3,Name="Sina",Family="<b>Ahmadi</b>"}
+                            };
+
     void WriteLog()
     {
         Console.WriteLine("Test Log");
@@ -20,6 +85,14 @@
     {
         public static string MyCustomToUpper(string value) => value.ToUpper();
     }
+
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+    }
+
 }
 
 
